@@ -1,0 +1,25 @@
+.nav {
+    height: auto;
+}
+
+.nav__list {
+    background-color: #dddddd;
+    border-radius: 18px;
+}
+
+.nav__item-link {
+    font-size: 24px;
+    line-height: 24px;
+    color: #5d5fef;
+    text-decoration: none;
+    padding: 20px 20px;
+    display: block;
+    border-radius: 18px;
+    transition: all .3s;
+    font-weight: 500;
+}
+
+.nav__item-link:hover {
+    background-color: #5d5fef;
+    color: #dddddd;
+}

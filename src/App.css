@@ -1,0 +1,41 @@
+body {
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #dddddd;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.main-content {
+    padding-bottom: 50px;
+}
+
+.main-content__inner {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    grid-gap: 30px;
+}
+
+.main-content__body {
+    border-radius: 18px;
+    background-color: #dddddd;
+}
+
+
+

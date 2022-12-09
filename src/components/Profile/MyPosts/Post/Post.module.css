@@ -1,0 +1,19 @@
+.post {
+    font-size: 18px;
+}
+
+.item {
+    display: flex;
+    border-radius: 18px;
+    padding: 15px;
+    grid-gap: 15px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    margin-bottom: 15px;
+}
+
+.itemImg img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

@@ -1,0 +1,16 @@
+.wrapper{
+    padding: 10px;
+}
+.inner{
+display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.dialogList{
+
+}
+.dialogLink{
+
+}
+.dialogActiveLink{
+    color: red;
+}

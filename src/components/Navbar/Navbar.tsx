@@ -1,11 +1,24 @@
 import React from "react";
-import "./Navbar.css";
+import {NavLink} from "react-router-dom";
+import styles from "./Navbar.module.css";
 
-export const Navbar = () => {
+export type NavbarType = {
+    menuItems: Array<MenuItemsType>
+}
+export type MenuItemsType = {
+    id: number
+    link: string
+    title: string
+}
+
+
+export const Navbar: React.FC<NavbarType> = (props) => {
     return <nav className={'nav'}>
-        <ul className={"nav__list"}>
-            <li className={"nav__item"}><a className={"nav__item-link"} href="#!">Profile</a></li>
-            <li className={"nav__item"}><a className={"nav__item-link"} href="#!">Messages</a></li>
+        <ul className={styles.list}>
+            {props.menuItems.map(i => <li key={i.id} className={"nav__item"}>
+                <NavLink className={styles.itemLink} activeClassName={styles.itemLinkActive}
+                         to={i.link}>{i.title}</NavLink>
+            </li>)}
         </ul>
     </nav>
 }

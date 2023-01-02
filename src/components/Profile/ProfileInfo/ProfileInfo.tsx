@@ -1,13 +1,8 @@
 import styles from "../Profile.module.css";
 import React from "react";
+import {ProfileInfoType} from "../../../redux/state";
 
-export type ProfileInfoType = {
-    name: string
-    dateOfBirth: string
-    profilePhoto: string
-    profileBanner: string
 
-}
 type Type = {
     profileInfo: ProfileInfoType
 }

@@ -1,9 +1,10 @@
 import React from "react";
-import {Post, PostsListType} from "./Post/Post";
+import {Post} from "./Post/Post";
 import styles from "./MyPosts.module.css"
+import {PostsListType} from "../../../redux/state";
 
 export type MyPostsType = {
-    postsList: Array<PostsListType>
+    postsData: Array<PostsListType>
 }
 
 
@@ -14,6 +15,6 @@ export const MyPosts: React.FC<MyPostsType> = (props) => {
             <textarea cols={80} name="myposts" id="myposts" placeholder={'Type your text...'}/>
             <button className={styles.btn}>Post</button>
         </div>
-        <Post postsList={props.postsList}/>
+        <Post postsData={props.postsData}/>
     </div>
 }

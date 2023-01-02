@@ -1,20 +1,14 @@
 import React from 'react';
 import styles from "./Dialogs.module.css"
-import {DialogItem} from "./Dialog/DialogItem";
+import {DialogItem} from "./DialogItem/DialogItem";
 import {MessageItem} from "./MessageItem/MessageItem";
+import {DialogsPageType} from "../../redux/state";
 
+type DialogsType = {
+    state: DialogsPageType
+}
 
-export const Dialogs = (props: any) => {
-
-    const dialogItems = [
-        {id: '1', name: 'Bekzod'},
-        {id: '2', name: 'Ibrohim'}
-    ];
-
-    const messageItems = [
-        {id: '1', message: 'Helloo!'},
-        {id: '2', message: 'Hey Bekzod!'}
-    ];
+export const Dialogs: React.FC<DialogsType> = (props) => {
 
 
     return (
@@ -22,11 +16,11 @@ export const Dialogs = (props: any) => {
             <div className={styles.inner}>
                 <div className={styles.dialogs}>
 
-                    <DialogItem dialogItems={dialogItems}/>
+                    <DialogItem dialogsData={props.state.dialogsData}/>
 
                 </div>
                 <div className={styles.messages}>
-                    <MessageItem messageItem={messageItems}/>
+                    <MessageItem messagesData={props.state.messagesData}/>
                 </div>
             </div>
         </div>

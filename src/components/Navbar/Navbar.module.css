@@ -1,5 +1,8 @@
 .nav {
     height: auto;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 50px;
 }
 
 .list {
@@ -26,4 +29,22 @@
 .itemLinkActive{
     color: #dddddd;
     background-color: #5d5fef;
+}
+
+.friends{
+    background-color: #5d5fef;
+    border-radius: 18px;
+    padding: 20px;
+    color: #ffffff;
+}
+.friendsPhoto{
+    max-width: 90px;
+    border-radius: 50%;
+    width: 100%;
+}
+.friendsList{
+    text-align: center;
+    display: flex;
+    grid-gap: 20px;
+    flex-wrap: wrap;
 }

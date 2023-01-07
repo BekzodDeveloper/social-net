@@ -5,6 +5,7 @@ import {ProfileInfoType} from "../../../redux/state";
 
 type Type = {
     profileInfo: ProfileInfoType
+
 }
 
 

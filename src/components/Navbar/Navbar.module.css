@@ -2,49 +2,93 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    grid-gap: 50px;
+    grid-gap: 15px;
+    margin-bottom: 30px;
 }
 
 .list {
     background-color: #dddddd;
-    border-radius: 18px;
+    border-radius: 10px;
 }
 
 .itemLink {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 30px;
     color: #5d5fef;
     text-decoration: none;
-    padding: 20px 20px;
+    padding: 10px 15px;
     display: block;
-    border-radius: 18px;
+
     transition: all .3s;
     font-weight: 500;
 }
+
 
 .itemLink:hover {
     background-color: #5d5fef;
     color: #dddddd;
 }
-.itemLinkActive{
+
+.navItem:first-child .itemLink:hover {
+    border-radius: 10px 10px 0 0;
+}
+.navItem:last-child .itemLink:hover {
+    border-radius: 0px 0px 10px 10px;
+}
+
+.itemLinkActive {
     color: #dddddd;
     background-color: #5d5fef;
 }
+.navItem:first-child .itemLinkActive {
+    border-radius: 10px 10px 0 0;
+}
+.navItem:last-child .itemLinkActive {
+    border-radius: 0px 0px 10px 10px;
+}
 
-.friends{
+.friends {
     background-color: #5d5fef;
-    border-radius: 18px;
+    border-radius: 10px;
     padding: 20px;
     color: #ffffff;
 }
-.friendsPhoto{
+
+.friendsPhoto {
     max-width: 90px;
     border-radius: 50%;
     width: 100%;
 }
-.friendsList{
+
+.friendsList {
     text-align: center;
     display: flex;
     grid-gap: 20px;
     flex-wrap: wrap;
+}
+.friends h2{
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    .nav{
+        margin-bottom: 0;
+    }
+    .friends {
+        padding: 10px;
+    }
+    .friends h2{
+        text-align: center;
+        margin: 0 0 20px;
+        font-size: 20px;
+    }
+    .friendsPhoto {
+        max-width: 40px
+    }
+    .friendsList {
+        font-size: 14px;
+        grid-gap: 10px;
+        justify-content: center;
+    }
 }

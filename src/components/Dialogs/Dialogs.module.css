@@ -1,16 +1,158 @@
-.wrapper{
+.wrapper {
+    /*padding: 10px;*/
+    height: 100%;
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    height: 100%;
+
+}
+
+.messagesWrapper {
     padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    border-radius: 0 10px 0 0;
+    background-color: #dddddd;
 }
-.inner{
-display: grid;
-    grid-template-columns: 2fr 10fr;
-}
-.dialogList{
+
+.messageItemBox {
 
 }
-.dialogLink{
+
+.messageItem {
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.dialogs {
+    background-color: #5d5fef;
+    border-radius: 10px 0 0 0px;
+}
+
+.dialogList {
 
 }
-.dialogActiveLink{
+
+.dialogLink a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+}
+
+.dialogLink:first-child a {
+    border-radius: 10px 0 0;
+}
+
+.dialogLink a:hover {
+    color: #5d5fef;
+    background-color: #fff;
+}
+
+.dialogActiveLink a {
     color: red;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.innerTextareaWrap {
+    position: sticky;
+    bottom: 0px;
+    right: 0;
+}
+
+.innerTextarea {
+    width: 100%;
+    display: flex;
+    grid-gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.innerTextarea textarea {
+    width: 100%;
+    height: 50px;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: #000;
+    font-size: 18px;
+    line-height: 28px;
+    background-color: #fff;
+
+}
+
+.innerTextarea textarea:focus-visible {
+    outline: 1px solid #5d5fef;
+}
+
+.innerTextarea .btn {
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #5d5fef;
+    border: 1px solid #5d5fef;
+    padding: 10px 30px;
+    margin-left: auto;
+}
+
+@media (max-width: 425px) {
+    .inner {
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 10fr;
+    }
+
+    .dialogs {
+        overflow-x: auto;
+        border-radius: 10px 10px 0 0px;
+    }
+
+    .dialogLink {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .dialogLink a {
+        padding: 10px 15px;
+        font-size: 14px;
+        line-height: 24px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: #5d5fef;
+        border: 1px solid #fff;
+
+    }
+
+    .dialogList {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    .messagesWrapper {
+        border-radius: 0;
+    }
 }

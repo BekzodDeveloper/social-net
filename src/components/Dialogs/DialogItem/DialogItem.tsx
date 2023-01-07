@@ -13,7 +13,7 @@ export const DialogItem: React.FC<DialogItemsType> = (props) => {
     const path = '/dialogs/';
 
     let DialogDataElements = props.dialogsData.map(d => {
-        return <li key={d.id}>
+        return <li className={styles.dialogLink} key={d.id}>
             <NavLink to={path + d.id}> {d.name}</NavLink>
         </li>
     })

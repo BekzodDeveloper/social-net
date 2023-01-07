@@ -10,7 +10,12 @@ import {StateType} from "./redux/state";
 
 export type AppType = {
     state: StateType
+    addPost: (newPostText: string) => void
+    sendMessage: (newMessageText: string) => void
+    changeNewMessage: (newMessage: string) => void
+    changeNewPost: (newPost: string) => void
 }
+
 
 const App: React.FC<AppType> = (props) => {
 
@@ -24,11 +29,17 @@ const App: React.FC<AppType> = (props) => {
                         <Navbar state={props.state.sidebar}
                                 profileInfo={props.state.profilePage.profileInfo}/>
                         <div className={"main-content__body"}>
-                            <Route path={'/profile'}
-                                   render={() => <Profile state={props.state.profilePage}/>}/>
+                            <Route exact path={'/profile'}
+                                   render={() => <Profile
+                                       state={props.state.profilePage}
+                                       addPost={props.addPost}
+                                       changeNewPost={props.changeNewPost}
+                                   />}/>
                             <Route exact path={'/dialogs'}
-                                   render={() => <Dialogs state={props.state.dialogsPage}/>}/>
-
+                                   render={() => <Dialogs
+                                       state={props.state.dialogsPage}
+                                       sendMessage={props.sendMessage}
+                                       changeNewMessage={props.changeNewMessage}/>}/>
                         </div>
                     </div>
 

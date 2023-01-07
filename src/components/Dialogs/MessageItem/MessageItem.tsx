@@ -1,5 +1,6 @@
 import React from "react";
 import {MessageItemType} from "../../../redux/state";
+import styles from "./../Dialogs.module.css";
 
 
 
@@ -9,8 +10,10 @@ export type MessageItemsType = {
 
 export const MessageItem: React.FC<MessageItemsType> = (props) => {
     return (
-        <div>
-            {props.messagesData.map(m => <div key={m.id}>{m.message}</div>)}
+        <div className={styles.messagesWrapper}>
+            {props.messagesData.map(m => <div key={m.id} className={styles.messageItemBox}>
+                <div className={styles.messageItem}>{m.message}</div>
+            </div>)}
         </div>
     )
 }

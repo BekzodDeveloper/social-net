@@ -4,10 +4,10 @@
 
 .item {
     display: flex;
-    border-radius: 18px;
+    border-radius: 10px;
     padding: 15px;
     grid-gap: 15px;
-    background-color: #fff;
+    background-color: #dadada;
     border: 1px solid #fff;
     margin-bottom: 15px;
 }

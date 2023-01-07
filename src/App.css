@@ -20,7 +20,7 @@ ul, li {
 
 
 .main-content {
-    padding-bottom: 50px;
+    /*padding-bottom: 50px;*/
 }
 
 .main-content__inner {
@@ -30,8 +30,7 @@ ul, li {
 }
 
 .main-content__body {
-    border-radius: 18px;
-    background-color: #dddddd;
+
 }
 
 @media (max-width: 1024px) {

@@ -1,4 +1,5 @@
 import profilePhoto from "./../images/profile-photo.jpg";
+import {rerenderEntireTree} from "../render";
 
 export type ProfileInfoType = {
     name: string
@@ -8,7 +9,7 @@ export type ProfileInfoType = {
 
 }
 export type PostsListType = {
-    id: string
+    id: number
     profilePhoto: string
     postContent: string
     likesCount: number
@@ -19,7 +20,7 @@ export type FriendType = {
     profilePhoto: string
 }
 export type MessageItemType = {
-    id: string
+    id: number
     message: string
 }
 
@@ -35,13 +36,18 @@ export type MenuItemsType = {
     link: string
     title: string
 }
+export type PostsType = {
+    newPost: string
+    postsData: Array<PostsListType>
+}
 
 export type ProfilePageType = {
-    postsData: Array<PostsListType>
+    posts: PostsType
     profileInfo: ProfileInfoType
 }
 
 export type DialogsPageType = {
+    newMessage: string
     messagesData: Array<MessageItemType>
     dialogsData: Array<DialogItemType>
 }
@@ -80,21 +86,24 @@ export let state: StateType = {
     },
 
     profilePage: {
-        postsData: [
-            {
-                id: "1",
-                profilePhoto: profilePhoto,
-                postContent: "Lorqqqqqqem ipsum dolor sit amet, consectetur adipisicing elit.",
-                likesCount: 1
-            },
-            {
-                id: "2",
-                profilePhoto: profilePhoto,
-                postContent: "Lorconsectetur adipisicing elit.",
-                likesCount: 11
+        posts: {
+            newPost: '',
+            postsData: [
+                {
+                    id: 1,
+                    profilePhoto: profilePhoto,
+                    postContent: "Lorqqqqqqem ipsum dolor sit amet, consectetur adipisicing elit.",
+                    likesCount: 1
+                },
+                {
+                    id: 2,
+                    profilePhoto: profilePhoto,
+                    postContent: "Lorconsectetur adipisicing elit.",
+                    likesCount: 11
 
-            }
-        ],
+                }
+            ],
+        },
         profileInfo: {
             name: "Bekzod",
             dateOfBirth: "18.07.2001",
@@ -103,14 +112,54 @@ export let state: StateType = {
         }
     },
     dialogsPage: {
+        newMessage: '',
         messagesData: [
-            {id: '1', message: 'Helloo!'},
-            {id: '2', message: 'Hey Bekzod!'}
+            {id: 1, message: 'Helloo!'},
+            {id: 2, message: 'Hey Bekzod!'}
         ],
         dialogsData: [
+            {id: '1', name: 'Bekzod'},
+            {id: '2', name: 'Ibrohim'},
+            {id: '1', name: 'Bekzod'},
+            {id: '2', name: 'Ibrohim'},
+            {id: '1', name: 'Bekzod'},
+            {id: '2', name: 'Ibrohim'},
             {id: '1', name: 'Bekzod'},
             {id: '2', name: 'Ibrohim'}
         ]
     }
 
 }
+
+export const addPost = (newPostText: string) => {
+
+    let newPost: PostsListType = {
+        id: new Date().getTime(),
+        profilePhoto: profilePhoto,
+        postContent: newPostText,
+        likesCount: 0
+    };
+    state.profilePage.posts.postsData.unshift(newPost);
+    rerenderEntireTree(state);
+}
+
+export const sendMessage = (newMessageText: string) => {
+
+    let newMessage: MessageItemType = {
+        id: new Date().getTime(),
+        message: newMessageText
+    };
+    state.dialogsPage.messagesData.push(newMessage);
+    rerenderEntireTree(state);
+}
+
+export const changeNewMessage = (newMessageText: string) => {
+    state.dialogsPage.newMessage = newMessageText;
+    rerenderEntireTree(state)
+}
+
+export const changeNewPost = (newPostText: string) => {
+    state.profilePage.posts.newPost = newPostText;
+    rerenderEntireTree(state)
+}
+
